@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script> 
+	<script src="../js/bootstrap-table.js"></script>
+	<script src="../js/bootstrap-table-export.js"></script>	
+	<script src="../js/bootstrap-table-zh-CN.js"></script>
+	<script src="../js/main-table.js"></script>
+	<script src="../js/main.js"></script> 	
+</head>
+<body>
+	<div class="header ">
+		<ul class="header_center clear">
+			<li>
+				<a href=""> 
+					<img src='../img/saic1.png' title="上海汽车集团">
+				</a>	
+			</li>
+			<li><a href="../homepage.html">首页 </a></li>
+			<li><a href="">公司新闻</a></li>
+			<li><a href="">我的待办</a></li>
+			<li><a href="">进度查询</a></li>
+			<li><a href="">常用应用系统</a></li>
+			<li>
+				<div class="search">
+					<select class="Inpt_text">
+						<option value="process">流程</option>	
+						<option value="people">人员</option>	
+						<option value="news">新闻</option>	
+						<option value="xt_search">系统搜索</option>	
+					</select>
+					<input type="text" placeholder="&nbsp;输入关键字开始搜索"	class="Inpt_text"/>
+					<img src="../img/search.svg" class="saic_search">
+				</div>
+			</li>
+			<li style="margin-left: 55px;">
+				<div class="wel">
+					欢迎您,&nbsp;&nbsp;<span>黄建松&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<a>Engilsh</a>
+				</div>
+			</li>
+			
+
+		</ul>
+	</div>
+
+	<!--上面删除-->
+	<!--主体内容-->
+	<div  class="main_cont" >
+		<!--左侧区域-->
+		<div class="m_left">
+			<ul class="l_content sucess_content" id="content_search">
+				<span class="l_content_title">进度查询</span>
+				<li class="act Lins">我的申请<span  class="pis_act">NEW</span></li>
+				<li>申请办结<span  class="pis_act">NEW</span></li>
+			</ul>
+		</div>
+		<!--右侧区域-->
+		<div class="m_right">
+			<div class="m_right_title">
+			<!--右侧头部-->
+				<div class="m_right_link">
+					<span class="m_right_link_main"><b style="color:#000000;">我的申请</b><a></a></span>
+					<span> <b style="color:#000000;">申请办结</b></span>
+				</div>
+			</div>
+			<div class="m_right_mian">
+				<div class="tab_change tab_change_act_main" id="link_info">
+				<!--下拉框-->
+					<div class="lable_Select">
+						<label id="lblSelect">
+				            <select id="selectPointOfInterest">
+				                <option>一个月</option>
+				                <option>二个月</option>
+				                <option>三个月</option>
+				                <option>四个月</option> 
+				                <option>五个月</option>
+				                <option>六个月</option>
+				            </select>
+				        </label>
+				        <label id="lblSelect" style="float:right">
+				            <select id="selectPointOfInterest">
+				                <option>所属系统</option>
+				                <option>请假系统</option>
+				                <option>调休系统</option>
+				                <option>财务系统</option> 
+				                <option>工程系统</option>
+				            </select>
+				        </label>
+					</div>
+					<table id="process_table"></table>	
+				</div>
+				<!--申请办结-->
+				<div class="tab_change code_Maintain">
+					<!--下拉框-->
+					<div class="lable_Select">
+						<label id="lblSelect">
+				            <select id="selectPointOfInterest">
+				                <option>一个月</option>
+				                <option>2个月</option>
+				                <option>一个月</option>
+				                <option>2个月</option> 
+				                <option>一个月</option>
+				                <option>2个月</option>
+				            </select>
+				        </label>
+				        <label id="lblSelect" style="float:right">
+				            <select id="selectPointOfInterest">
+				                <option>所属系统</option>
+				                <option>2个月</option>
+				                <option>123个月</option>
+				                <option>2个月</option> 
+				                <option>123个月</option>
+				                <option>2个月</option>
+				            </select>
+				        </label>
+					</div>
+					<table id="Apply_table"></table>	
+				</div>
+			
+		</div>
+	</div>
+
+</body>
+<!--table页-->
+<script>
+	//我的申请
+  window.onload=function(){
+  	   /*lync点击事件*/
+    window.Process = {
+    'click .RoleOfedit': function (e, value, row, index) {
+        alert(index);      
+     }
+   };
+	   $.ajax({
+        url : "sasa.json",
+        type : "get",
+        dataType : "json",
+        success : function(value) {
+            var obj = [];
+            $.each(value.rows, function(i, d) {
+                obj.push(d);
+            });
+             $table = $('#process_table').bootstrapTable(
+                    {
+                    data : obj,                                
+                    pagination : true,
+                    showHeader:true,
+                    pageNumber : 1,
+                    pageSize : 10,
+                    pageList : [ 5, 10, 20 ],
+                     paginationPreText: "上一页",  
+                    paginationNextText: "下一页",  
+                    columns : [                                           
+                            {
+                                field : 'number',
+                                title : '编号',
+                                width : 80,
+                                formatter : function(value,row, index) {
+                                    return index + 1;
+                                }
+                            }, {
+                                field : 'xt', 
+                                title : '流程号',                                
+                                align : 'center',
+                                valign : 'center',
+                                formatter:function(value, row, index){
+　　　　　　                    var temp = '<a href="http://www.baidu.com">'+value+'</a>';
+　　　　　　					return temp;
+								}
+                            }, {
+                                field : 'sth',
+                                title : '申请事项<img src="../img/qustion.png" onclick="one()"  style="cursor:pointer;margin-left: 5px;">',
+                                align : 'center',
+                                valign : 'center',
+                                formatter:function(value, row, index){
+　　　　　　                   var temp = '<a href="https://www.qq.com" title='+value+'>'+value+'</a>';
+　　　　　　					return temp;
+								}
+                            }, {
+                                field : 'mail',
+                                title : '所属系统',
+                                align : 'center',
+                                valign : 'center',
+                            }, {
+                                field : 'name',
+                                title : '当前审批人',
+                                align : 'center',
+                                valign : 'center', 
+                                events: Process,
+                                formatter: process_S                                   
+                            }, {
+                                field : 'times',
+                                title : '停留时间',
+                                
+                                align : 'center',
+                                valign : 'center',                               
+                            }, {
+                                field : 'time',
+                                title : '申请时间',
+                             
+                                align : 'center',
+                                valign : 'center',                               
+                            }],
+                           
+                           
+                });
+				function process_S(value, row, index) {							
+                    return [
+               '<img src="../img/lk.png" class="RoleOfedit btn btn-sm" sdata-toggle="modal" style="display:inline;width: 45px;height: 35px;">'+value
+               ];  
+                 } ;
+                 
+    		}
+    });
+/*申请办结*/
+$.ajax({
+        url : "sasa.json",
+        type : "get",
+        dataType : "json",
+        success : function(value) {
+            var obj = [];
+            $.each(value.rows, function(i, d) {
+                obj.push(d);
+            });
+             $table = $('#Apply_table').bootstrapTable(
+                    {
+                    data : obj,                                
+                    pagination : true,
+                    showHeader:true,
+                    pageNumber : 1,
+                    pageSize : 10,
+                    pageList : [ 5, 10, 20 ],
+                     paginationPreText: "上一页",  
+                    paginationNextText: "下一页",  
+                    columns : [                                           
+                            {
+                                field : 'number',
+                                title : '编号',
+                                width : 80,
+                                formatter : function(value,row, index) {
+                                    return index + 1;
+                                }
+                            }, {
+                                field : 'xt', 
+                                title : '流程号',                                
+                                align : 'center',
+                                valign : 'center',
+                                formatter:function(value, row, index){
+　　　　　　                    var temp = '<a href="http://www.baidu.com">'+value+'</a>';
+　　　　　　					return temp;
+								}
+                            }, {
+                                field : 'sth',
+                                title : '申请事项<img src="../img/qustion.png" onclick="one()"  style="cursor:pointer;margin-left: 5px;">',
+                                align : 'center',
+                                valign : 'center',
+                                formatter:function(value, row, index){
+　　　　　　                   var temp = '<a href="https://www.qq.com">'+value+'</a>';
+　　　　　　					return temp;
+								}
+                            }, {
+                                field : 'time',
+                                title : '申请时间',
+                                width : 120,
+                                align : 'center',
+                                valign : 'center',                               
+                            } ,{
+                                field : 'mail',
+                                title : '所属系统',
+                                align : 'center',
+                                valign : 'center',
+                            }, {
+                                field : 'time',
+                                title : '办结时间',
+                                width : 120,
+                                align : 'center',
+                                valign : 'center',                               
+                            }],
+                           
+                           
+                });				
+    		}
+    });
+
+
+
+
+}
+function one(){
+    
+
+        alert('给我图')
+
+    }
+  		
+  </script>
+
+</html>

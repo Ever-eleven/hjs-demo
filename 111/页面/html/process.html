@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>统一门户</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script> 
+	<script src="../js/bootstrap-table.js"></script>
+	<script src="../js/bootstrap-table-export.js"></script>	
+	<script src="../js/bootstrap-table-zh-CN.js"></script>
+	<script src="../js/main-table.js"></script>
+	<script src="../js/main.js"></script> 	
+</head>
+<body>
+	<div class="header ">
+		<ul class="header_center clear">
+			<li>
+				<a href=""> 
+					<img src='../img/saic1.png' title="上海汽车集团">
+				</a>	
+			</li>
+			<li><a href="">首页 </a></li>
+			<li><a href="">公司新闻</a></li>
+			<li><a href="">我的待办</a></li>
+			<li><a href="">进度查询</a></li>
+			<li><a href="">常用应用系统</a></li>
+			<li>
+				<div class="search">
+					<select class="Inpt_text">
+						<option value="process">流程</option>	
+						<option value="people">人员</option>	
+						<option value="news">新闻</option>	
+						<option value="xt_search">系统搜索</option>	
+					</select>
+					<input type="text" placeholder="&nbsp;输入关键字开始搜索"	class="Inpt_text"/>
+					<img src="../img/search.svg" class="saic_search">
+				</div>
+			</li>
+			<li style="margin-left: 55px;">
+				<div class="wel">
+					欢迎您,&nbsp;&nbsp;<span>黄建松&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<a>Engilsh</a>
+				</div>
+			</li>
+			
+
+		</ul>
+	</div>
+	<!--主体内容-->
+	<div  class="main_cont cont_center" >
+		<div class="title_info"> 
+			<b>流程</b>
+			<span>搜索结果:共搜索<a class="act_red">2</a>条信息</span>
+		</div>
+		<table id="process_tab"></table>	
+		
+	</div>
+     <!-- 右侧二维码 -->
+        <div class="two_code">
+            <img src="../img/Tcode.png" class="Scan">
+            <img src="../img/code.png" class="changeCode">
+        </div>
+  </body>
+  <!--table列表-->
+  <script>
+  		  window.onload=function(){
+	   /*流程*/
+	   $.ajax({
+        url : "sasa.json",
+        type : "get",
+        dataType : "json",
+        success : function(value) {
+            var obj = [];
+            $.each(value.rows, function(i, d) {
+                obj.push(d);
+            });
+             $table = $('#process_tab').bootstrapTable(
+                    {
+                    data : obj,                                
+                    pagination : true,
+                    showHeader:true,
+                    pageNumber : 1,
+                    pageSize : 8,
+                    pageList : [ 5, 10, 20 ],
+                     paginationPreText: "上一页",  
+                    paginationNextText: "下一页",  
+                    columns : [                                           
+                            {
+                                field : 'number',
+                                title : '编号',
+                                width : 80,
+                                formatter : function(value,row, index) {
+                                    return index + 1;
+                                }
+                            }, {
+                                field : 'xt', 
+                                title : '流程编号',                                
+                                align : 'center',
+                                valign : 'center',
+                                formatter:function(value, row, index){
+　　　　　　                    var temp = '<a href="http://www.baidu.com">'+value+'</a>';
+　　　　　　					return temp;
+								}
+                            }, {
+                                field : 'sth',
+                                title : '事件名称<img src="../img/qustion.png" onclick="one()"  style="cursor:pointer;margin-left: 5px;">',
+                                align : 'center',
+                                valign : 'center',
+                                formatter:function(value, row, index){
+　　　　　　                   var temp = '<a href="https://www.qq.com">'+value+'</a>';
+　　　　　　					return temp;
+								}
+                            }, {
+                                field : 'mail',
+                                title : '所属系统',
+                                align : 'center',
+                                valign : 'center',
+                            }, {
+                                field : 'name',
+                                title : '申请人',
+                                align : 'center',
+                                valign : 'center',                               
+                            }, {
+                                field : 'time',
+                                title : '停留时间',
+                                width : 120,
+                                align : 'center',
+                                valign : 'center',                               
+                            }, {
+                                field : 'time',
+                                title : '申请时间',
+                                width : 120,
+                                align : 'center',
+                                valign : 'center',                               
+                            }, {
+                                field : 'status',
+                                title : '流程状态',
+                                align : 'center',
+                                valign : 'center',                               
+                            }],
+                           
+                           
+                });
+
+                 
+    		}
+    });
+
+
+
+
+}
+function one(){
+    
+
+        alert('给我图')
+
+    }
+  		
+  </script>
+</html>
+	

@@ -1,0 +1,190 @@
+/*查询样式标红*/
+.act_red{
+	color:#FF0000;
+}
+/* 进度查询new样式 */
+.pis_act{
+	font-size: 16px;
+	color: #FF0404;	
+	position: relative;
+	top:-16px;
+	left: 3px;
+}
+table{
+	font-size: 14px;
+	letter-spacing: 0.47px;
+}
+table tr{
+	height:46px;
+}
+.box_tex{
+	width:122px;
+	height: 41px;
+	border:1px solid red;
+	position: absolute;
+    top: 19%;
+    left: 32%;
+    border-radius: 10px;
+    display: none;
+}
+.fixed-table-pagination{
+	background: #4195E8;
+    border-radius: 4px;
+    height: 50px;
+}
+.cont_center{
+	margin-top: 20px;
+	height: 500px;
+}
+.title_info{
+	font-size: 20px;
+    color: #000000;
+    font-weight: 500;
+    height:auto; 
+}
+.title_info b{
+	padding-left: 15px;
+	border-left:4px solid #3672BB;
+	border-radius: 2px;	
+}
+.title_info  span{
+	width:166px;
+	height:17px;
+	font-size: 14px;
+	color:#979797;
+	display: block;
+	margin-top: 12px;
+	
+}
+
+.fixed-table-container{
+	margin-top: 20px;
+}
+
+.title_border{
+	height: 10px;
+	border-bottom: 2px solid #E1E1E1;
+}
+.main_center{
+	height: 380px;
+	
+}	
+.search_menu{
+	height:75px;
+	margin-top: 15px;
+	border-bottom: 2px solid #E1E1E1;
+	
+}
+.search_menu label{
+	font-size: 18px;
+	font-weight: normal;
+}
+.search_menu .search-bottom{
+	font-size: 15px;
+	margin-top: 15px;
+}
+/*系统搜索分页*/
+.footer_pagination{
+	text-align: center;
+}
+
+.footer_pagination li{
+	width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: 2px solid 1B6CBC;
+    border-radius: 5px;
+	display: inline-block;
+	background: #1B6CBC;
+	margin-right: 20px;
+}
+.footer_pagination li a{
+	font-size: 18px;
+	color:white;
+	text-decoration: none;
+
+}
+.search_solid{
+	margin-right: 10px
+}
+/*二维码*/
+.two_code{
+	width: 52px;
+	height:100px;
+	position: fixed;
+    right: -18px;
+    top: 40%;
+}
+.changeCode{
+	width: 180px;
+	height:200px;
+	display: none;
+	position: fixed;
+    right: 0px;
+}
+.pagination>li>a{
+	background: #4195E8!important;
+    border: none!important;
+    color:white;
+    font-size: 18px;
+}
+.pull-right .pagination .active a{
+	color: black;
+    background: white!important;
+    border-radius: 5px	
+} 
+/* 进度查询 */
+#content_search  li{	
+	height: 42px;
+	line-height: 42px;
+	color: #6F92C6;
+}
+#content_search .act{
+	color:#3566AF;
+	font-weight: 600;
+}
+
+/* 下拉列表样式 */
+
+select#selectPointOfInterest{
+width: 200px;
+height : 32px;
+line-height : 32px;
+text-indent : 4pt;
+text-align : left;
+vertical-align: middle;
+border : 1px solid #000000;
+-moz-border-radius : 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+-webkit-appearance : none;
+-moz-appearance : none;
+appearance : none;
+font-size : 16px;
+font-weight : 500;
+color: #000000;
+letter-spacing: 0.47px;
+cursor: pointer;
+outline : none;
+}
+label#lblSelect{ position: relative; display: inline-block;}
+label#lblSelect::after
+{
+content : "\25bc";
+position: absolute;
+top : 0;
+right: 0;
+bottom: 0;
+width: 48px;
+line-height: 32px;
+vertical-align: middle;
+text-align: center;
+background: #1468BB;
+color: white;
+-moz-border-radius: 0 6px 6px 0;
+-webkit-border-radius: 0 6px 6px 0;
+border-radius: 0 6px 6px 0;
+pointer-events: none;
+font-size: 18px
+}
+

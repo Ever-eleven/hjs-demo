@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="136px" height="52px" viewBox="0 0 136 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5 Copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="后台-二维码维护" transform="translate(-613.000000, -804.000000)">
+            <rect id="Rectangle-21" fill="#FFFFFF" x="0" y="0" width="1920" height="1080"></rect>
+            <g id="Group-6" transform="translate(610.000000, 104.000000)">
+                <g id="Group-5-Copy-4" transform="translate(3.000000, 700.000000)">
+                    <g id="Group-11">
+                        <rect id="Rectangle" fill="#4195E8" x="0" y="0" width="136" height="52" rx="10"></rect>
+                        <text id="确认修改" font-family=".PingFangSC-Light, .PingFang SC" font-size="16" font-weight="300" fill="#FFFFFF">
+                            <tspan x="60.36" y="32">确认修改</tspan>
+                        </text>
+                        <polyline id="Rectangle-22" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(35.500000, 23.645833) rotate(-45.000000) translate(-35.500000, -23.645833) " points="50 30.2916667 21 30.2916667 21 17"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

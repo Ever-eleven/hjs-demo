@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>统一门户</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-table.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-table.js"></script>
+	<script src="js/bootstrap-table-export.js"></script>
+	<script src="js/bootstrap-table-zh-CN.js"></script>
+	<script src="js/main-table.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<style>
+		.fixed-table-pagination{
+			display: none!important;
+		}
+/*@font-face {
+    font-family: PingFang-SC-Semibold;
+    src: url("font/PingFang-SC-Semibold.ttf");
+}
+
+@font-face {
+    font-family: PingFangSC-Regular ;
+    src: url("font/PingFang_Regular.otf");
+
+}*/
+	 .bootstrap-table .table > thead > tr > th{
+		border-bottom: 0px solid white;
+	}
+	#homepage tbody tr td{
+		border-bottom: 1px solid white;
+		height: 40px!important;
+	}
+	.fixed-table-container{
+		border: none!important
+	}
+	#homepage{
+		margin-top: -15px;
+	}
+	.fixed-table-container thead th .th-inner{
+		color:#010101;
+	}
+	.table-striped>tbody>tr:nth-of-type(odd){
+		background: rgba(20,104,187,0.10);
+	}
+
+	</style>
+</head>
+<body>
+	<div class="header ">
+		<ul class="header_center clear">
+			<li>
+				<a href="">
+					<img src='img/saic1.png' title="上海汽车集团">
+				</a>
+			</li>
+			<li><a href="">首页 </a></li>
+			<li><a href="">公司新闻</a></li>
+			<li><a href="">我的待办</a></li>
+			<li><a href="html/process_search.html">进度查询</a></li>
+			<li><a href="">常用应用系统</a></li>
+			<li>
+				<div class="search">
+					<select class="Inpt_text">
+						<option value="process">流程</option>
+						<option value="people">人员</option>
+						<option value="news">新闻</option>
+						<option value="xt_search">系统搜索</option>
+					</select>
+					<input type="text" placeholder="&nbsp;输入关键字开始搜索"	class="Inpt_text"/>
+					<img src="img/search.svg" class="saic_search">
+				</div>
+			</li>
+			<li style="margin-left: 55px;">
+				<div class="wel">
+					欢迎您,&nbsp;&nbsp;<span>黄建松&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<a>Engilsh</a>
+				</div>
+			</li>
+
+
+		</ul>
+	</div>
+	<!--主体内容-->
+
+	<div  class="main_cont">
+
+		<!--头部导航-->
+		<ul class="topTitle">
+			<li id="paltform"><img src="img/Fill 1.svg"><span>我的工作台</span></li>
+			<li><img src="img/people.svg"><span>人事服务类</span>
+				<ul class="Top_second">
+					<li><a href="#">薪酬查询</a></li>
+					<li><a href="#">请假审批管理</a></li>
+					<li><a href="#">360测评</a></li>
+					<li><a href="#">员工信息自助更新</a></li>
+					<li><a href="#">员工培训申请管理</a></li>
+					<li><a href="#">能级评定管理</a></li>
+					<li><a href="#">岗位职责说明</a></li>
+				</ul>
+			</li>
+			<li><img src="img/Fill 2.svg"><span>行政服务类</span>
+				<ul class="Top_second">
+					<li><a href="#">班车信息查询</a></li>
+					<li><a href="#">合理化建议</a></li>
+					<li><a href="#">安全监察</a></li>
+					<li><a href="#">合规手册</a></li>
+					<li><a href="#">员工推荐购车</a></li>
+				</ul>
+			</li>
+			<li><img src="img/caiwu.svg"><span>财务服务类</span>
+				<ul class="Top_second">
+					<li><a href="#">采购申请</a></li>
+					<li><a href="#">验收申请</a></li>
+					<li><a href="#">报销申请</a></li>
+					<li><a href="#">出差申请</a></li>
+					<li><a href="#">预支申请</a></li>
+				</ul>
+			</li>
+			<li><img src="img/qiu.svg"><span>IT服务类</span>
+				<ul class="Top_second">
+					<li><a href="#">运行</a></li>
+					<li><a href="#">信息资源申请</a></li>
+					<li><a href="#">应用系统权限申请</a></li>
+				</ul>
+			</li>
+			<li><img src="img/speed.svg"><span>采购服务类</span>
+				<ul class="Top_second">
+					<li><a href="#">采购会签</a></li>
+					<li><a href="#">合同评审</a></li>
+				</ul>
+			</li>
+			<li style="width:150px;"><img src="img/shouchange.svg"><span>我的收藏</span></li>
+		</ul>
+		<!-- 天气 -->
+		<div class="center_menu">
+					<div class="weather">
+						<li><img src="img/sun.png"></li>
+						<li class="demp">18~24℃</li>
+						<li class="w_city">
+							<select>
+								<option>上海</option>
+								<option>北京</option>
+								<option>广州111</option>
+							</select>
+						</li>
+						<li class="w_data">2017年7月12日</li>
+						<div style="margin-top: 15px;"><img src="img/A3.png"><span class="success">流程中心</span></div>
+					</div>
+					<!-- 轮播图 -->
+					<div class="banner">
+						<div class="swiper-container">
+						    <div class="swiper-wrapper">
+						        <div class="swiper-slide bananer1"><a href=""><img src="img/d5.png" /><span>上汽集团MG E-motion概念车全球...</span></a></div>
+						        <div class="swiper-slide bananer2"><a href=""><img src="img/ss1.png" /><span>上汽集团rover E-motion概念车全球...</span></a></div>
+						        <div class="swiper-slide bananer3"><a href=""><img src="img/d5.png" /><span>上汽集团MG E-motion概念车全球...</span></a></div>
+						    </div>
+						    <div class="swiper-pagination" style="text-align: right;"></div>
+						</div>
+					</div>
+					<div class="index_news">
+							<div class="new_title">
+								<span>新闻动态 </span><a>更多</a></div>
+
+									<li><span style="margin-right:5px;"><img src="img/dotta.png"></span>上汽集团整车销量达到562万辆，同比增长10.6%，继续保213122133123</li>
+									<li><span style="margin-right:5px;"><img src="img/dotta.png"></span>上汽集团整车销量达到562万辆，同比增长10.6%，继续保213213123123</li>
+									<li><span style="margin-right:5px;"><img src="img/dotta.png"></span>上汽集团整车销量达到562万辆，同比增长10.6%，继续保213123131223</li>
+									<li><span style="margin-right:5px;"><img src="img/dotta.png"></span>上汽集团整车销量达到562万辆，同比增长10.6%，继续保231212313123</li>
+
+
+					</div>
+			</div>
+			<!--中间板块结束-->
+			<!--首页底部-->
+			<div class="page_footer">
+				<div class="page_footer_left">
+					<ul class="page_footer_button">
+						<li class="Agency">
+							<img src="img/3.png" id="write_num">
+							<b>22</b>
+							<img src="img/A1.png">
+							<span><a>待办流程</a></span>
+						</li>
+						<li class="Schedule">
+							<img src="img/4.png" class="Schedule_new">
+							<img src="img/A2.png">
+							<span><a>进度查询</a></span>
+						</li>
+					</ul>
+					<ul class="quick_key" style="margin-bottom:50px">
+
+						<li class="Dempent poststate">
+							<img src="img/8.png">部门站点
+							<ul class="demp_site">
+								<li><a href="">党工办</a></li>
+								<li><a href="">人力资源部</a></li>
+								<li><a href="">信息系统部</a></li>
+								<li><a href="">技术中心网站</a></li>
+								<li><a href="">安全保障部</a></li>
+							</ul>
+						</li>
+						<li style="margin-left: 13px;" class="Dempent linkinfo"><img src="img/7.png">友情链接
+							<ul class="demp_site">
+								<li><a href="">上海汽车企业门户</a></li>
+								<li><a href="">党建信息平台</a></li>
+								<li><a href="">决策研究网</a></li>
+								<li><a href="">荣威官网</a></li>
+								<li><a href="">MG官网</a></li>
+								<li><a href="">南汽集团</a></li>
+							</ul>
+						</li>
+						<!--bottom-->
+						<div style="margin-bottom: 25px;"></div>
+						<li><img src="img/10.png">电子公告版</li>
+						<li><img src="img/9.png">我要反馈</li>
+					</ul>
+				</div>
+				<div class="page_footer_right">
+					<div class="table_title">
+						<span>我的待办</span><a>更多</a>
+					</div>
+					<table id="homepage"></table>
+				</div>
+			</div>
+
+
+<!-- 右侧二维码 -->
+        <div class="two_code">
+            <img src="img/Tcode.png" class="Scan">
+            <img src="img/code.png" class="changeCode">
+        </div>
+
+	</div>
+
+<script>
+  var mySwiper = new Swiper ('.swiper-container', {
+   autoplay : 3000,
+	speed:300,
+	loop : true,
+	effect : 'fade',
+	autoplayDisableOnInteraction : false,
+    pagination: '.swiper-pagination',
+  })
+  $(function(){
+   /*人员*/
+	   $.ajax({
+        url : "sasa.json",
+        type : "get",
+        dataType : "json",
+        success : function(value) {
+            var obj = [];
+            $.each(value.rows, function(i, d) {
+                obj.push(d);
+            });
+             $table = $('#homepage').bootstrapTable(
+                    {
+                    data : obj,
+                    striped: true,
+                    pagination : true,
+                    pageNumber : 1,
+                    pageSize : 4,
+                    pageList : [ 5, 10, 20 ],
+
+                    columns : [
+                    		 {
+                                field : 'number',
+                                title : '编号',
+                                width : 80,
+                                formatter : function(value,row, index) {
+                                    return index + 1;
+                                }
+                            },
+                            {
+                                field : 'some',
+                                title : '待办事项',
+                                align : 'center',
+                                valign : 'center',
+                                formatter:function(value, row, index){
+　　　　　　                    var temp = '<a href="http://www.baidu.com">'+value+'</a>';
+　　　　　　					return temp;
+								}
+                            }, {
+                                field : 'time',
+                                title : '申请时间',
+                                align : 'center',
+                                valign : 'center',
+                            },  {
+                                field : 'pp',
+                                title : '申请人',
+                                align : 'center',
+                                valign : 'center',
+                            }, {
+                                field : 'dep',
+                                title : '所属部门',
+                                align : 'center',
+                                valign : 'center',
+                            }, {
+                                field : 'deps',
+                                title : '所属系统',
+                                align : 'center',
+                                valign : 'center',
+                            }],
+
+                });
+                function actionFormatter(value, row, index) {
+                    return [
+               '<img src="../img/lk.png" class="RoleOfedit btn btn-sm"   data-toggle="modal" style="display:inline;width: 45px;height: 35px;">',
+               ].join('');
+                 } ;
+
+    		}
+    });
+})
+
+  </script>
+</body>
+</html>
